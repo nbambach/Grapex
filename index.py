@@ -5,12 +5,6 @@ import dash_core_components as dcc
 from sites import rip720
 from sites import rip760
 
-external_css = ["https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css",
-"https://fonts.googleapis.com/css?family=Raleway:400,400i,700,700i",
-"https://fonts.googleapis.com/css?family=Product+Sans:400,400i,700,700i"]
-app = dash.Dash(__name__, external_stylesheets=external_css)
-app.config['suppress_callback_exceptions'] = True
-
 app.layout = html.Div([
     html.Div([
         html.H1("GrAPPex Tools",
