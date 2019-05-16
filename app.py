@@ -10,4 +10,4 @@ external_css = ["https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.
 
 app = dash.Dash(__name__,external_stylesheets=external_css)
 
-# server = app.server
+server = app.server
