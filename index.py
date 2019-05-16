@@ -2,8 +2,13 @@ import dash
 from dash.dependencies import Input, Output
 import dash_html_components as html
 import dash_core_components as dcc
-from sites import rip720
-from sites import rip760
+from app import app
+from app import server
+from apps import rip720
+from apps import rip760
+#from apps import slm
+from apps import bar
+from apps import flux
 
 app.layout = html.Div([
     html.Div([
@@ -29,12 +34,12 @@ app.layout = html.Div([
         ],style={'padding': '10px 10px 70px 10px'},
             className='Title'),
         html.Div([
-            dcc.Tabs(id="tabs_site", value='RIPPERDAN', children=[
+            dcc.Tabs(id="tabs_site", value='rip720', children=[
+                dcc.Tab(label='BAR', value='bar'),
+           #     dcc.Tab(label='SLM', value='slm'),
                 dcc.Tab(label='RIP720', value='rip720'),
                 dcc.Tab(label='RIP760', value='rip760'),
-                dcc.Tab(label='BAR', value='bar'),
-                dcc.Tab(label='SLM', value='slm'),
-                dcc.Tab(label='FLUX', value='flux')
+                dcc.Tab(label='Fluxes Explorer', value='flux'),
             ]),
             html.Div(id='tool_type')
         ])
@@ -45,10 +50,16 @@ app.layout = html.Div([
               [Input('tabs_site', 'value')])
 
 def render_content(tab):
-    if tab == 'rip720':
+    if tab == 'bar':
+        return bar.bar_layout
+ #   else tab == 'slm':
+ #       return slm.slm_layout
+    elif tab == 'rip720':
         return rip720.rip720_layout
     elif tab == 'rip760':
         return rip760.rip760_layout
- 
- if __name__ == "__main__":
+    elif tab == 'flux':
+        return flux.flux_layout
+
+if __name__ == "__main__":
     app.run_server(debug=True)
