@@ -46,7 +46,6 @@ app.layout = html.Div([
 ])
 ])
 
-server = app.server
 
 @app.callback(Output('tool_type', 'children'),
               [Input('tabs_site', 'value')])
