@@ -46,6 +46,8 @@ app.layout = html.Div([
 ])
 ])
 
+server = app.server
+
 @app.callback(Output('tool_type', 'children'),
               [Input('tabs_site', 'value')])
 
@@ -60,8 +62,6 @@ def render_content(tab):
         return rip760.rip760_layout
     elif tab == 'flux':
         return flux.flux_layout
-
-server = app.server
 
 if __name__ == "__main__":
     app.run_server(debug=True)
