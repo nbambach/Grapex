@@ -33,3 +33,4 @@ numpy
 datetime
 colorlover
 IPython
+xlrd
