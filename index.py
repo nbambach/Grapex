@@ -61,5 +61,7 @@ def render_content(tab):
     elif tab == 'flux':
         return flux.flux_layout
 
+server = app.server
+
 if __name__ == "__main__":
     app.run_server(debug=True)
