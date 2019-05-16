@@ -40,7 +40,7 @@ app.layout = html.Div([
         ],style={'padding': '10px 10px 70px 10px'},
             className='Title'),
         html.Div([
-            dcc.Tabs(id="tabs_site", value='rip720', children=[
+            dcc.Tabs(id="tabs_site", value='rip760', children=[
                 dcc.Tab(label='BAR', value='bar'),
            #     dcc.Tab(label='SLM', value='slm'),
                 dcc.Tab(label='RIP720', value='rip720'),
